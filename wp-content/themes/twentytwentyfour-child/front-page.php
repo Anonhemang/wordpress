@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 </head>
+
 <body>
     <!-- !! Main Wrapper !! -->
     <div class="main_wrapper position-relative bg-primary">
@@ -41,12 +43,16 @@
                     <div class="row justify-content-center">
                         <div class="col-xl-8 col-lg-10 col-12">
                             <div class="hero_banner_content text-center">
-                                <h1>Revolutionise Your <br><span class="typeWriter" data-end="3000"
-                                        data-text='["Marketing", "Projects", "Processes", "Tasks", "Insights"]'>
-                                        <span class="wrap">Marketing</span></span> With AI</h1>
+                                <h1><?php the_field('banner_text') ?> <br>
+                                    <span class="typeWriter" data-end="3000"
+                                        data-text='<?php echo json_encode(explode(',', get_field('typewriter'))); ?>'>
+                                        <span
+                                            class="wrap"><?php echo explode(',', get_field('typewriter'))[0]; ?></span>
+                                    </span>
+                                    With AI
+                                </h1>
                                 <div class="para mx-auto">
-                                    <p>We are your guide to the world of AI in digital marketing. Our team will
-                                        introduce you to powerful AI tools and processes. </p>
+                                    <p><?php the_field('banner_para') ?> </p>
                                 </div>
                                 <a type="button" data-bs-toggle="modal" data-bs-target="#enquiryModal"
                                     href="javascript:void(0)" class="btn btn-secondary">Talk with our experts</a>
@@ -76,10 +82,9 @@
                                         alt="Data Analysis">
                                 </div>
                                 <div class="our_services_content">
-                                    <h4>Data Analysis and Interpretation</h4>
+                                    <h4><?php the_field('ai_assisted_services_title_1') ?></h4>
                                     <div class="para">
-                                        <p>Examining data to uncover patterns, discover insights, and draw meaningful
-                                            conclusions</p>
+                                        <p><?php the_field('ai_assisted_services_title_1_1') ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -91,10 +96,9 @@
                                         alt="Process Automation">
                                 </div>
                                 <div class="our_services_content">
-                                    <h4>Process <br> Automation</h4>
+                                    <h4><?php the_field('ai_assisted_services_title_2') ?></h4>
                                     <div class="para">
-                                        <p>Technology to automate and streamline repetitive and manual tasks or
-                                            processes</p>
+                                        <p><?php the_field('ai_assisted_services_title_2_2') ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -106,10 +110,9 @@
                                         alt="AI Strategy">
                                 </div>
                                 <div class="our_services_content">
-                                    <h4>AI Strategy and Implementation</h4>
+                                    <h4><?php the_field('ai_assisted_services_title_3') ?></h4>
                                     <div class="para">
-                                        <p>Development and execution of a plan to leverage artificial intelligence
-                                            technologies</p>
+                                        <p><?php the_field('ai_assisted_services_title_3_3') ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -121,10 +124,9 @@
                                         alt="AI Marketing">
                                 </div>
                                 <div class="our_services_content">
-                                    <h4>AI Marketing Driven campaigns</h4>
+                                    <h4><?php the_field('ai_assisted_services_title_4') ?></h4>
                                     <div class="para">
-                                        <p>Use of artificial intelligence technologies to enhance and optimize various
-                                            aspects of marketing activities</p>
+                                        <p><?php the_field('ai_assisted_services_title_4_4') ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -143,21 +145,27 @@
                             <h2 class="m-0">How Our AI Service Works</h2>
                         </div>
                         <div class="para text-center">
-                            <p>Our AI-driven process ensures precise data analysis, bespoke marketing strategy
-                                development, and adaptive execution, maximising ROI and customer engagement.</p>
+                            <p><?php the_field('hoasw_tagline') ?></p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-4 col-12">
                             <div class="work_box bg-secondary position-relative h-100">
                                 <div class="work_img">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/Data Acquisition.png"
-                                        alt="Data Acquisition">
+                                    <?php
+                                    // Retrieve the image field
+                                    $image = get_field('hoasw_image_1'); // Replace 'header_image' with your field name
+                                    
+                                    // Check if the image field has a value
+                                    if ($image): ?>
+                                        <img src="<?php echo esc_url($image['url']); ?>"
+                                            alt="<?php echo esc_attr($image['alt']); ?>">
+                                    <?php endif; ?>
                                 </div>
                                 <div class="work_content d-flex align-items-center">
                                     <div class="number rounded-pill d-flex align-items-center justify-content-center">1
                                     </div>
-                                    <h4 class="m-0">Data Acquisition and <br> Analysis </h4>
+                                    <h4 class="m-0"><?php the_field('hoasw_image_1_description')?></h4>
                                 </div>
                             </div>
                         </div>
@@ -615,7 +623,7 @@
                     </div>
                 </div>
             </div>
-            <!-- End FAQs Wrapper --> 
+            <!-- End FAQs Wrapper -->
         </div>
         <!-- End Page Banner -->
     </div>
@@ -708,6 +716,7 @@
         </div>
     </div>
 </body>
+
 </html>
 <?php get_header(); ?>
 <?php get_footer(); ?>
