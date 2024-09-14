@@ -165,33 +165,49 @@
                                 <div class="work_content d-flex align-items-center">
                                     <div class="number rounded-pill d-flex align-items-center justify-content-center">1
                                     </div>
-                                    <h4 class="m-0"><?php the_field('hoasw_image_1_description')?></h4>
+                                    <h4 class="m-0"><?php the_field('hoasw_image_1_description') ?></h4>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-12">
                             <div class="work_box bg-secondary position-relative h-100">
                                 <div class="work_img">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/Strategic Marketing.png"
-                                        alt="Strategic Marketing">
+                                    <?php
+                                    // Retrieve the image field
+                                    $image = get_field('hoasw_image_2'); // Replace 'header_image' with your field name
+                                    
+                                    // Check if the image field has a value
+                                    if ($image): ?>
+                                        <img src="<?php echo esc_url($image['url']); ?>"
+                                            alt="<?php echo esc_attr($image['alt']); ?>">
+                                    <?php endif; ?>
                                 </div>
                                 <div class="work_content d-flex align-items-center">
                                     <div class="number rounded-pill d-flex align-items-center justify-content-center">2
                                     </div>
-                                    <h4 class="m-0">Strategic Marketing Plan Development</h4>
+                                    <h4 class="m-0"><?php the_field('hoasw_image_2_description') ?></h4>
+
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4 col-12">
                             <div class="work_box bg-secondary position-relative h-100">
                                 <div class="work_img">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/Execution.png"
-                                        alt="Execution">
+                                    <?php
+                                    // Retrieve the image field
+                                    $image = get_field('hoasw_image_3'); // Replace 'header_image' with your field name
+                                    
+                                    // Check if the image field has a value
+                                    if ($image): ?>
+                                        <img src="<?php echo esc_url($image['url']); ?>"
+                                            alt="<?php echo esc_attr($image['alt']); ?>">
+                                    <?php endif; ?>
                                 </div>
                                 <div class="work_content d-flex align-items-center">
                                     <div class="number rounded-pill d-flex align-items-center justify-content-center">3
                                     </div>
-                                    <h4 class="m-0">Execution, Monitoring, <br> and Adaptation</h4>
+                                    <h4 class="m-0"><?php the_field('hoasw_image_3_description') ?></h4>
+
                                 </div>
                             </div>
                         </div>
