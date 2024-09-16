@@ -13,7 +13,7 @@
     <!-- !! Main Wrapper !! -->
     <div class="main_wrapper position-relative bg-primary">
         <!-- Navigation -->
-        <nav class="navbar">
+        <!-- <nav class="navbar">
             <div class="container flex-nowrap">
                 <a class="navbar-brand" href="/">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/ai-inspire-logo.png"
@@ -35,7 +35,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> -->
         <!-- End Navigation -->
         <!-- Page Banner -->
         <div class="page_banner position-relative">
@@ -509,35 +509,14 @@
                             </form>
                         </div>
                         <div class="modal_enquiry_info">
-                            <div class="modal_testimonial">
-                                <p>I have been hiring people in this space for a number of years and I have never seen
-                                    this level of professionalism. It really feels like you are working with a team that
-                                    can get the job done.</p>
-                                <div class="modal_author d-flex align-items-center">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/author.png"
-                                        class="rounded-pill" alt="Leonard Heiser">
-                                    <div class="modal_author_info">
-                                        <h6 class="m-0">Leonard Heiser</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal_brands">
-                                <div class="common_title_wrapper d-inline-flex align-items-center">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/ai-title.png"
-                                        alt="AI">
-                                    <h4 class="m-0">Brands we have helped</h4>
-                                </div>
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/logos.png"
-                                    alt="Brands we have worked with" class="w-100">
-                            </div>
+
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</body>
 
-</html>
-<?php get_header(); ?>
-<?php get_footer(); ?>
+    <?php get_header(); ?>
+    <?php get_footer(); ?>
