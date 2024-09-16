@@ -3,6 +3,11 @@
 
 <head>
 </head>
+<style>
+    body {
+        background-color: #1a1a1a !important;
+    }
+</style>
 
 <body>
     <!-- !! Main Wrapper !! -->
@@ -234,414 +239,214 @@
                     </div>
                     <div class="swiper testimonial_slider">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div
-                                    class="testimonial_slide_block flex-md-row flex-column d-flex align-items-md-stretch align-items-start">
-                                    <div class="testimonial_slide_block_img">
-                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/testimonial-img.png"
-                                            alt="testimonial-img">
-                                    </div>
-                                    <div class="testimonial_slide_block_content">
-                                        <div class="rating">
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M15.5441 19.7961L10 16.3268L4.45589 19.7961C4.25449 19.9237 3.99468 19.9139 3.80074 19.7732C3.60734 19.633 3.51863 19.3892 3.57699 19.1575L5.16312 12.8123L0.209524 8.61234C0.0263987 8.45898 -0.0451248 8.20949 0.0287034 7.98234C0.102532 7.7546 0.307375 7.59496 0.545422 7.57835L7.01082 7.12687L9.45641 1.06093C9.63609 0.618037 10.3639 0.618037 10.5436 1.06093L12.9892 7.12687L19.4546 7.57835C19.6926 7.59496 19.8975 7.7546 19.9713 7.98234C20.0451 8.20949 19.9736 8.45898 19.7905 8.61234L14.8368 12.8123L16.423 19.1575C16.4813 19.3893 16.3927 19.6331 16.1992 19.7732C16.0013 19.917 15.7422 19.9202 15.5441 19.7961Z"
-                                                    fill="#FFB81C"></path>
-                                            </svg>
-                                            <span>5/5</span>
-                                        </div>
-                                        <div class="content">
-                                            <p>I have been hiring people in this space for a number of years and I have
-                                                never seen this level of professionalism. It really feels like you are
-                                                working with a team that can get the job done.</p>
-                                        </div>
-                                        <div
-                                            class="author_wrap d-flex align-items-center justify-content-between flex-sm-nowrap flex-wrap">
-                                            <div class="author_box d-flex align-items-center">
-                                                <div class="icon">
-                                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/author.png"
-                                                        alt="author">
-                                                </div>
-                                                <div class="author_box_content">
-                                                    <p class="name m-0">Leonard Heiser</p>
-                                                </div>
-                                            </div>
-                                            <div class="date d-flex align-items-center">
-                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_64_4471)">
+                            <?php if (have_rows('testi')): ?>
+                                <?php while (have_rows('testi')):
+                                    the_row(); ?>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial_slide_block flex-md-row flex-column d-flex 
+                                         align-items-md-stretch align-items-start">
+
+                                            <div class="testimonial_slide_block_content">
+                                                <div class="rating">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
                                                         <path
-                                                            d="M2.41787 16H13.5823C14.7527 16 15.7038 15.0489 15.7038 13.8785V3.30665C15.7038 2.13628 14.7527 1.18516 13.5823 1.18516H12.7408V0.592582C12.7408 0.266652 12.4741 0 12.1482 0C11.8223 0 11.5556 0.266652 11.5556 0.592582V1.18516H4.44456V0.592582C4.44456 0.266652 4.17786 0 3.85193 0C3.526 0 3.25934 0.266652 3.25934 0.592582V1.18516H2.41787C1.24751 1.18516 0.296387 2.13628 0.296387 3.30665V13.8785C0.296387 15.0489 1.24751 16 2.41787 16ZM1.4816 3.30665C1.4816 2.79111 1.90233 2.37038 2.41787 2.37038H3.25934V2.96296C3.25934 3.28889 3.526 3.55554 3.85193 3.55554C4.17786 3.55554 4.44451 3.28889 4.44451 2.96296V2.37038H11.5556V2.96296C11.5556 3.28889 11.8223 3.55554 12.1482 3.55554C12.4741 3.55554 12.7408 3.28889 12.7408 2.96296V2.37038H13.5823C14.0978 2.37038 14.5185 2.79111 14.5185 3.30665V5.03704H1.4816V3.30665ZM1.4816 6.22221H14.5186V13.8785C14.5186 14.3941 14.0979 14.8148 13.5824 14.8148H2.41787C1.90233 14.8148 1.4816 14.3941 1.4816 13.8785V6.22221Z"
-                                                            fill="white"></path>
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_64_4471">
-                                                            <rect width="16" height="16" fill="white"></rect>
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                                <span>February 2023</span>
+                                                            d="M15.5441 19.7961L10 16.3268L4.45589 19.7961C4.25449 19.9237 3.99468 19.9139 3.80074 19.7732C3.60734 19.633 3.51863 19.3892 3.57699 19.1575L5.16312 12.8123L0.209524 8.61234C0.0263987 8.45898 -0.0451248 8.20949 0.0287034 7.98234C0.102532 7.7546 0.307375 7.59496 0.545422 7.57835L7.01082 7.12687L9.45641 1.06093C9.63609 0.618037 10.3639 0.618037 10.5436 1.06093L12.9892 7.12687L19.4546 7.57835C19.6926 7.59496 19.8975 7.7546 19.9713 7.98234C20.0451 8.20949 19.9736 8.45898 19.7905 8.61234L14.8368 12.8123L16.423 19.1575C16.4813 19.3893 16.3927 19.6331 16.1992 19.7732C16.0013 19.917 15.7422 19.9202 15.5441 19.7961Z"
+                                                            fill="#FFB81C"></path>
+                                                    </svg>
+                                                    <span>5/5</span>
+                                                </div>
+                                                <div class="content">
+                                                    <p><?php the_sub_field('test_para'); ?></p>
+                                                </div>
+                                                <div
+                                                    class="author_wrap d-flex align-items-center justify-content-between flex-sm-nowrap flex-wrap">
+                                                    <div class="author_box d-flex align-items-center">
+                                                        <div class="icon">
+                                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/author.png"
+                                                                alt="author">
+                                                        </div>
+                                                        <div class="author_box_content">
+                                                            <p class="name m-0"><?php the_sub_field('name') ?></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="date d-flex align-items-center">
+                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <g clip-path="url(#clip0_64_4471)">
+                                                                <path
+                                                                    d="M2.41787 16H13.5823C14.7527 16 15.7038 15.0489 15.7038 13.8785V3.30665C15.7038 2.13628 14.7527 1.18516 13.5823 1.18516H12.7408V0.592582C12.7408 0.266652 12.4741 0 12.1482 0C11.8223 0 11.5556 0.266652 11.5556 0.592582V1.18516H4.44456V0.592582C4.44456 0.266652 4.17786 0 3.85193 0C3.526 0 3.25934 0.266652 3.25934 0.592582V1.18516H2.41787C1.24751 1.18516 0.296387 2.13628 0.296387 3.30665V13.8785C0.296387 15.0489 1.24751 16 2.41787 16ZM1.4816 3.30665C1.4816 2.79111 1.90233 2.37038 2.41787 2.37038H3.25934V2.96296C3.25934 3.28889 3.526 3.55554 3.85193 3.55554C4.17786 3.55554 4.44451 3.28889 4.44451 2.96296V2.37038H11.5556V2.96296C11.5556 3.28889 11.8223 3.55554 12.1482 3.55554C12.4741 3.55554 12.7408 3.28889 12.7408 2.96296V2.37038H13.5823C14.0978 2.37038 14.5185 2.79111 14.5185 3.30665V5.03704H1.4816V3.30665ZM1.4816 6.22221H14.5186V13.8785C14.5186 14.3941 14.0979 14.8148 13.5824 14.8148H2.41787C1.90233 14.8148 1.4816 14.3941 1.4816 13.8785V6.22221Z"
+                                                                    fill="white"></path>
+                                                            </g>
+                                                            <defs>
+                                                                <clipPath id="clip0_64_4471">
+                                                                    <rect width="16" height="16" fill="white"></rect>
+                                                                </clipPath>
+                                                            </defs>
+                                                        </svg>
+                                                        <span>February 2023</span>
+                                                    </div>
+                                                </div>
+
                                             </div>
                                         </div>
+
                                     </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div
-                                    class="testimonial_slide_block flex-md-row flex-column d-flex align-items-md-stretch align-items-start">
-                                    <div class="testimonial_slide_block_content">
-                                        <div class="rating">
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M15.5441 19.7961L10 16.3268L4.45589 19.7961C4.25449 19.9237 3.99468 19.9139 3.80074 19.7732C3.60734 19.633 3.51863 19.3892 3.57699 19.1575L5.16312 12.8123L0.209524 8.61234C0.0263987 8.45898 -0.0451248 8.20949 0.0287034 7.98234C0.102532 7.7546 0.307375 7.59496 0.545422 7.57835L7.01082 7.12687L9.45641 1.06093C9.63609 0.618037 10.3639 0.618037 10.5436 1.06093L12.9892 7.12687L19.4546 7.57835C19.6926 7.59496 19.8975 7.7546 19.9713 7.98234C20.0451 8.20949 19.9736 8.45898 19.7905 8.61234L14.8368 12.8123L16.423 19.1575C16.4813 19.3893 16.3927 19.6331 16.1992 19.7732C16.0013 19.917 15.7422 19.9202 15.5441 19.7961Z"
-                                                    fill="#FFB81C"></path>
-                                            </svg>
-                                            <span>5/5</span>
-                                        </div>
-                                        <div class="content">
-                                            <p>I have been hiring people in this space for a number of years and I have
-                                                never seen this level of professionalism. It really feels like you are
-                                                working with a team that can get the job done.</p>
-                                        </div>
-                                        <div
-                                            class="author_wrap d-flex align-items-center justify-content-between flex-sm-nowrap flex-wrap">
-                                            <div class="author_box d-flex align-items-center">
-                                                <div class="icon">
-                                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/author.png"
-                                                        alt="author">
-                                                </div>
-                                                <div class="author_box_content">
-                                                    <p class="name m-0">Leonard Heiser</p>
-                                                </div>
-                                            </div>
-                                            <div class="date d-flex align-items-center">
-                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_64_4471)">
-                                                        <path
-                                                            d="M2.41787 16H13.5823C14.7527 16 15.7038 15.0489 15.7038 13.8785V3.30665C15.7038 2.13628 14.7527 1.18516 13.5823 1.18516H12.7408V0.592582C12.7408 0.266652 12.4741 0 12.1482 0C11.8223 0 11.5556 0.266652 11.5556 0.592582V1.18516H4.44456V0.592582C4.44456 0.266652 4.17786 0 3.85193 0C3.526 0 3.25934 0.266652 3.25934 0.592582V1.18516H2.41787C1.24751 1.18516 0.296387 2.13628 0.296387 3.30665V13.8785C0.296387 15.0489 1.24751 16 2.41787 16ZM1.4816 3.30665C1.4816 2.79111 1.90233 2.37038 2.41787 2.37038H3.25934V2.96296C3.25934 3.28889 3.526 3.55554 3.85193 3.55554C4.17786 3.55554 4.44451 3.28889 4.44451 2.96296V2.37038H11.5556V2.96296C11.5556 3.28889 11.8223 3.55554 12.1482 3.55554C12.4741 3.55554 12.7408 3.28889 12.7408 2.96296V2.37038H13.5823C14.0978 2.37038 14.5185 2.79111 14.5185 3.30665V5.03704H1.4816V3.30665ZM1.4816 6.22221H14.5186V13.8785C14.5186 14.3941 14.0979 14.8148 13.5824 14.8148H2.41787C1.90233 14.8148 1.4816 14.3941 1.4816 13.8785V6.22221Z"
-                                                            fill="white"></path>
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_64_4471">
-                                                            <rect width="16" height="16" fill="white"></rect>
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                                <span>February 2023</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div
-                                    class="testimonial_slide_block flex-md-row flex-column d-flex align-items-md-stretch align-items-start">
-                                    <div class="testimonial_slide_block_img">
-                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/testimonial-img.png"
-                                            alt="testimonial-img">
-                                    </div>
-                                    <div class="testimonial_slide_block_content">
-                                        <div class="rating">
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M15.5441 19.7961L10 16.3268L4.45589 19.7961C4.25449 19.9237 3.99468 19.9139 3.80074 19.7732C3.60734 19.633 3.51863 19.3892 3.57699 19.1575L5.16312 12.8123L0.209524 8.61234C0.0263987 8.45898 -0.0451248 8.20949 0.0287034 7.98234C0.102532 7.7546 0.307375 7.59496 0.545422 7.57835L7.01082 7.12687L9.45641 1.06093C9.63609 0.618037 10.3639 0.618037 10.5436 1.06093L12.9892 7.12687L19.4546 7.57835C19.6926 7.59496 19.8975 7.7546 19.9713 7.98234C20.0451 8.20949 19.9736 8.45898 19.7905 8.61234L14.8368 12.8123L16.423 19.1575C16.4813 19.3893 16.3927 19.6331 16.1992 19.7732C16.0013 19.917 15.7422 19.9202 15.5441 19.7961Z"
-                                                    fill="#FFB81C"></path>
-                                            </svg>
-                                            <span>5/5</span>
-                                        </div>
-                                        <div class="content">
-                                            <p>I have been hiring people in this space for a number of years and I have
-                                                never seen this level of professionalism. It really feels like you are
-                                                working with a team that can get the job done.</p>
-                                        </div>
-                                        <div
-                                            class="author_wrap d-flex align-items-center justify-content-between flex-sm-nowrap flex-wrap">
-                                            <div class="author_box d-flex align-items-center">
-                                                <div class="icon">
-                                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/author.png"
-                                                        alt="author">
-                                                </div>
-                                                <div class="author_box_content">
-                                                    <p class="name m-0">Leonard Heiser</p>
-                                                </div>
-                                            </div>
-                                            <div class="date d-flex align-items-center">
-                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_64_4471)">
-                                                        <path
-                                                            d="M2.41787 16H13.5823C14.7527 16 15.7038 15.0489 15.7038 13.8785V3.30665C15.7038 2.13628 14.7527 1.18516 13.5823 1.18516H12.7408V0.592582C12.7408 0.266652 12.4741 0 12.1482 0C11.8223 0 11.5556 0.266652 11.5556 0.592582V1.18516H4.44456V0.592582C4.44456 0.266652 4.17786 0 3.85193 0C3.526 0 3.25934 0.266652 3.25934 0.592582V1.18516H2.41787C1.24751 1.18516 0.296387 2.13628 0.296387 3.30665V13.8785C0.296387 15.0489 1.24751 16 2.41787 16ZM1.4816 3.30665C1.4816 2.79111 1.90233 2.37038 2.41787 2.37038H3.25934V2.96296C3.25934 3.28889 3.526 3.55554 3.85193 3.55554C4.17786 3.55554 4.44451 3.28889 4.44451 2.96296V2.37038H11.5556V2.96296C11.5556 3.28889 11.8223 3.55554 12.1482 3.55554C12.4741 3.55554 12.7408 3.28889 12.7408 2.96296V2.37038H13.5823C14.0978 2.37038 14.5185 2.79111 14.5185 3.30665V5.03704H1.4816V3.30665ZM1.4816 6.22221H14.5186V13.8785C14.5186 14.3941 14.0979 14.8148 13.5824 14.8148H2.41787C1.90233 14.8148 1.4816 14.3941 1.4816 13.8785V6.22221Z"
-                                                            fill="white"></path>
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_64_4471">
-                                                            <rect width="16" height="16" fill="white"></rect>
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                                <span>February 2023</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div
-                                    class="testimonial_slide_block flex-md-row flex-column d-flex align-items-md-stretch align-items-start">
-                                    <div class="testimonial_slide_block_content">
-                                        <div class="rating">
-                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M15.5441 19.7961L10 16.3268L4.45589 19.7961C4.25449 19.9237 3.99468 19.9139 3.80074 19.7732C3.60734 19.633 3.51863 19.3892 3.57699 19.1575L5.16312 12.8123L0.209524 8.61234C0.0263987 8.45898 -0.0451248 8.20949 0.0287034 7.98234C0.102532 7.7546 0.307375 7.59496 0.545422 7.57835L7.01082 7.12687L9.45641 1.06093C9.63609 0.618037 10.3639 0.618037 10.5436 1.06093L12.9892 7.12687L19.4546 7.57835C19.6926 7.59496 19.8975 7.7546 19.9713 7.98234C20.0451 8.20949 19.9736 8.45898 19.7905 8.61234L14.8368 12.8123L16.423 19.1575C16.4813 19.3893 16.3927 19.6331 16.1992 19.7732C16.0013 19.917 15.7422 19.9202 15.5441 19.7961Z"
-                                                    fill="#FFB81C"></path>
-                                            </svg>
-                                            <span>5/5</span>
-                                        </div>
-                                        <div class="content">
-                                            <p>I have been hiring people in this space for a number of years and I have
-                                                never seen this level of professionalism. It really feels like you are
-                                                working with a team that can get the job done.</p>
-                                        </div>
-                                        <div
-                                            class="author_wrap d-flex align-items-center justify-content-between flex-sm-nowrap flex-wrap">
-                                            <div class="author_box d-flex align-items-center">
-                                                <div class="icon">
-                                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/author.png"
-                                                        alt="author">
-                                                </div>
-                                                <div class="author_box_content">
-                                                    <p class="name m-0">Leonard Heiser</p>
-                                                </div>
-                                            </div>
-                                            <div class="date d-flex align-items-center">
-                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_64_4471)">
-                                                        <path
-                                                            d="M2.41787 16H13.5823C14.7527 16 15.7038 15.0489 15.7038 13.8785V3.30665C15.7038 2.13628 14.7527 1.18516 13.5823 1.18516H12.7408V0.592582C12.7408 0.266652 12.4741 0 12.1482 0C11.8223 0 11.5556 0.266652 11.5556 0.592582V1.18516H4.44456V0.592582C4.44456 0.266652 4.17786 0 3.85193 0C3.526 0 3.25934 0.266652 3.25934 0.592582V1.18516H2.41787C1.24751 1.18516 0.296387 2.13628 0.296387 3.30665V13.8785C0.296387 15.0489 1.24751 16 2.41787 16ZM1.4816 3.30665C1.4816 2.79111 1.90233 2.37038 2.41787 2.37038H3.25934V2.96296C3.25934 3.28889 3.526 3.55554 3.85193 3.55554C4.17786 3.55554 4.44451 3.28889 4.44451 2.96296V2.37038H11.5556V2.96296C11.5556 3.28889 11.8223 3.55554 12.1482 3.55554C12.4741 3.55554 12.7408 3.28889 12.7408 2.96296V2.37038H13.5823C14.0978 2.37038 14.5185 2.79111 14.5185 3.30665V5.03704H1.4816V3.30665ZM1.4816 6.22221H14.5186V13.8785C14.5186 14.3941 14.0979 14.8148 13.5824 14.8148H2.41787C1.90233 14.8148 1.4816 14.3941 1.4816 13.8785V6.22221Z"
-                                                            fill="white"></path>
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_64_4471">
-                                                            <rect width="16" height="16" fill="white"></rect>
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                                <span>February 2023</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
                         </div>
-                        <div class="swiper-pagination"></div>
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
-            <!-- End Testimonial -->
-            <!-- Our Brands -->
-            <div class="our_brands position-relative">
-                <div class="container">
-                    <div
-                        class="our_brands_wrapper d-flex align-items-center justify-content-center flex-xl-nowrap flex-wrap">
-                        <div class="our_brands_box d-flex align-items-center justify-content-center">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/suzuki.png"
-                                alt="Suzuki">
-                        </div>
-                        <div class="our_brands_box d-flex align-items-center justify-content-center">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/swisse.png"
-                                alt="Swisse">
-                        </div>
-                        <div class="our_brands_box d-flex align-items-center justify-content-center">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/westpac.png"
-                                alt="Westpac">
-                        </div>
-                        <div class="our_brands_box d-flex align-items-center justify-content-center">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/c-aus.png"
-                                alt="Australian Government">
-                        </div>
-                        <div class="our_brands_box d-flex align-items-center justify-content-center">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/post.png"
-                                alt="Australia Post">
-                        </div>
-                        <div class="our_brands_box d-flex align-items-center justify-content-center">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/the-y.png"
-                                alt="The YMCA">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Our Brands -->
-            <!-- Our Team -->
-            <div class="our_team position-relative">
-                <div class="container">
-                    <div class="common_title d-flex flex-column align-items-center justify-content-center">
-                        <div class="common_title_wrapper d-inline-flex align-items-center justify-content-center">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/ai-title.png"
-                                alt="AI">
-                            <h2 class="m-0">Meet Our Team</h2>
-                        </div>
-                        <div class="para text-center">
-                            <p>Our team possesses deep expertise in AI and digital marketing, leveraging years of
-                                experience to craft optimised, data-driven strategies.</p>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-xl-3 col-md-5 col-12">
-                            <div class="our_team_box mx-auto">
-                                <div class="team_member_img">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/matt-smith.png"
-                                        alt="Richard">
-                                </div>
-                                <div class="team_member_info">
-                                    <p>Director</p>
-                                    <h4 class="m-0">Richard</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-5 col-12">
-                            <div class="our_team_box mx-auto">
-                                <div class="team_member_img">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/gabriel.png"
-                                        alt="Gabriel">
-                                </div>
-                                <div class="team_member_info">
-                                    <p>Director</p>
-                                    <h4 class="m-0">Gabriel</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-5 col-12">
-                            <div class="our_team_box mx-auto">
-                                <div class="team_member_img">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/bruce.png"
-                                        alt="Bruce">
-                                </div>
-                                <div class="team_member_info">
-                                    <p>Head of Digital</p>
-                                    <h4 class="m-0">Bruce</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-5 col-12">
-                            <div class="our_team_box mx-auto">
-                                <div class="team_member_img">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/rajiv.png"
-                                        alt="Rajiv">
-                                </div>
-                                <div class="team_member_info">
-                                    <p>SEO Director</p>
-                                    <h4 class="m-0">Rajiv</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Our Team -->
-            <!-- FAQs Wrapper -->
-            <div class="faqs_wrapper position-relative bg-secondary">
-                <div class="container">
-                    <div class="common_title d-flex flex-column align-items-center justify-content-center">
-                        <div class="common_title_wrapper d-inline-flex align-items-center justify-content-center">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/ai-title.png"
-                                alt="AI">
-                            <h2 class="m-0">FAQ’s
-                            </h2>
-                        </div>
-                        <div class="para text-center">
-                            <p>Visit our FAQ section for clear, concise answers to common questions about our AI-driven
-                                digital marketing services and processes.</p>
-                        </div>
-                    </div>
-                    <div class="accordion" id="accrdionWrapper">
-                        <div class="accordion-item">
-                            <div class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#col-1" aria-expanded="true" aria-controls="col-1">
-                                    <span></span>
-                                    How does your AI-driven approach enhance the effectiveness of my marketing strategy?
-                                </button>
-                            </div>
-                            <div id="col-1" class="accordion-collapse collapse show" data-bs-parent="#accrdionWrapper">
-                                <div class="accordion-body">
-                                    <div class="para">
-                                        <p>Our AI-driven approach is a way of using artificial intelligence to make your
-                                            marketing strategy better. It's like having a super-smart computer helper
-                                            that can analyze a lot of information and make smart decisions to help you
-                                            reach more people and make your marketing efforts more successful.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#col-2" aria-expanded="false" aria-controls="col-2">
-                                    <span></span>
-                                    Can your services be tailored to my specific industry and target audience?
-                                </button>
-                            </div>
-                            <div id="col-2" class="accordion-collapse collapse" data-bs-parent="#accrdionWrapper">
-                                <div class="accordion-body">
-                                    <div class="para">
-                                        <p>Certainly! We customize our services to fit the unique requirements and
-                                            challenges of your particular field. We take the time to understand your
-                                            industry, its language, and the specific problems you face. It's like having
-                                            a coach who knows all the ins and outs of your sport and can give you
-                                            personalized training.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#col-3" aria-expanded="false" aria-controls="col-3">
-                                    <span></span>
-                                    How do you measure and report the success of the marketing strategies you implement?
-                                </button>
-                            </div>
-                            <div id="col-3" class="accordion-collapse collapse" data-bs-parent="#accrdionWrapper">
-                                <div class="accordion-body">
-                                    <div class="para">
-                                        <p>Measuring and reporting success is an ongoing process. We continuously
-                                            evaluate our marketing efforts, adapt strategies as needed, and iterate on
-                                            our approach to maximize results.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <div class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#col-4" aria-expanded="false" aria-controls="col-4">
-                                    <span></span>
-                                    Will I need any special technical knowledge or additional software to benefit from
-                                    your AI marketing consultancy services?
-                                </button>
-                            </div>
-                            <div id="col-4" class="accordion-collapse collapse" data-bs-parent="#accrdionWrapper">
-                                <div class="accordion-body">
-                                    <div class="para">
-                                        <p>You don't need any special technical knowledge or additional software. It's
-                                            like having a personal guide who helps you without needing you to be an
-                                            expert or use complicated tools.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End FAQs Wrapper -->
         </div>
-        <!-- End Page Banner -->
+        <!-- End Testimonial -->
+        <!-- Our Brands -->
+        <div class="our_brands position-relative">
+            <div class="container">
+                <div
+                    class="our_brands_wrapper d-flex align-items-center justify-content-center flex-xl-nowrap flex-wrap">
+                    <div class="our_brands_box d-flex align-items-center justify-content-center">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/suzuki.png" alt="Suzuki">
+                    </div>
+                    <div class="our_brands_box d-flex align-items-center justify-content-center">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/swisse.png" alt="Swisse">
+                    </div>
+                    <div class="our_brands_box d-flex align-items-center justify-content-center">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/westpac.png"
+                            alt="Westpac">
+                    </div>
+                    <div class="our_brands_box d-flex align-items-center justify-content-center">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/c-aus.png"
+                            alt="Australian Government">
+                    </div>
+                    <div class="our_brands_box d-flex align-items-center justify-content-center">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/post.png"
+                            alt="Australia Post">
+                    </div>
+                    <div class="our_brands_box d-flex align-items-center justify-content-center">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/the-y.png"
+                            alt="The YMCA">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Our Brands -->
+
+
+
+
+    <!-- Our Team -->
+    <div class="our_team position-relative">
+        <div class="container">
+            <div class="common_title d-flex flex-column align-items-center justify-content-center">
+                <div class="common_title_wrapper d-inline-flex align-items-center justify-content-center">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/ai-title.png" alt="AI">
+                    <h2 class="m-0">Meet Our Team</h2>
+                </div>
+                <div class="para text-center">
+                    <p>Our team possesses deep expertise in AI and digital marketing, leveraging years of
+                        experience to craft optimised, data-driven strategies.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <!--  -->
+                <?php
+                if (have_rows('content')):
+                    while (have_rows('content')):
+                        the_row();
+                        if (get_row_layout() == 'meet_our_members'):
+                            // Get the image field (assuming it is an image field type)
+                            $team_image = get_sub_field('team_image');
+                            $team_name = get_sub_field('team_name');
+                            ?>
+                            <div class="col-xl-3 col-md-5 col-12">
+                                <div class="our_team_box mx-auto">
+                                    <div class="team_member_img">
+                                        <?php if ($team_image):
+                                            // Output HTML for the image
+                                            echo '<img src="' . esc_url($team_image['url']) . '" alt="' . esc_attr($team_image['alt']) . '" />';
+                                        endif; ?>
+                                    </div>
+                                    <div class="team_member_info">
+                                        <p><?php echo '<p>' . get_sub_field('designation') . '</p>'; ?></p>
+                                        <h4 class="m-0"> <?php echo '<p>' . esc_html($team_name) . '</p>'; ?></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                        endif;
+                    endwhile;
+                endif;
+                ?>
+                <!--  -->
+
+            </div>
+        </div>
+    </div>
+    <!-- End Our Team -->
+    <!-- FAQs Wrapper -->
+    <div class="faqs_wrapper position-relative bg-secondary">
+        <div class="container">
+            <div class="common_title d-flex flex-column align-items-center justify-content-center">
+                <div class="common_title_wrapper d-inline-flex align-items-center justify-content-center">
+                    <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/images/ai-title.png'); ?>"
+                        alt="AI">
+                    <h2 class="m-0">FAQ’s</h2>
+                </div>
+                <div class="para text-center">
+                    <p>Visit our FAQ section for clear, concise answers to common questions about our AI-driven digital
+                        marketing services and processes.</p>
+                </div>
+            </div>
+            <div class="accordion" id="accrdionWrapper">
+
+                <?php
+                if (have_rows('content')):
+                    $counter = 0; // Initialize a counter for unique IDs
+                    while (have_rows('content')):
+                        the_row();
+                        if (get_row_layout() == 'faqs'):
+                            $counter++; // Increment counter for each FAQ item
+                            $collapse_id = 'collapse-' . $counter; // Create a unique ID for each accordion item
+                            ?>
+
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#<?php echo esc_attr($collapse_id); ?>" aria-expanded="false"
+                                        aria-controls="<?php echo esc_attr($collapse_id); ?>">
+                                        <span></span>
+                                        <?php the_sub_field('questions'); ?>
+                                    </button>
+                                </div>
+                                <div id="<?php echo esc_attr($collapse_id); ?>" class="accordion-collapse collapse"
+                                    data-bs-parent="#accrdionWrapper">
+                                    <div class="accordion-body">
+                                        <div class="para">
+                                            <p>
+                                                <?php the_sub_field('answers'); ?>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <?php
+                        endif;
+                    endwhile;
+                endif;
+                ?>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- End FAQs Wrapper -->
+    </div>
+    <!-- End Page Banner -->
     </div>
     <!-- !! End Main Wrapper !! -->
     <!-- Modal -->
