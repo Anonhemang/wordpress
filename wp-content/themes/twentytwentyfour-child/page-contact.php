@@ -65,37 +65,33 @@
                                         <h2 class="m-0">AI Assisted Services</h2>
                                     </div>
                                 </div>
+
                                 <div class="row">
-                                    <?php if (have_rows('ai_assisted_services')): // Check if the repeater field has rows ?>
-                                        <?php
-                                        // Array of static image paths
-                                        $service_images = array(
-                                            'data-analysis.png',
-                                            'process.png',
-                                            'ai-strategy.png',
-                                            'ai-marketing.png'
-                                        );
-                                        $index = 0; // Index for images
-                                        ?>
-                                        <?php while (have_rows('ai_assisted_services')):
-                                            the_row(); ?>
+
+                                    <?php if (have_rows('service')): // Check if the repeater field has rows ?>
+                                        <?php while (have_rows('service')):
+                                            the_row();
+
+                                            $image = get_sub_field('logo');
+
+                                            ?>
+
+
+
                                             <div class="col-xl-3 col-md-6 col-12">
                                                 <div class="our_services_box h-100 text-center">
                                                     <div class="our_services_icon">
-                                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/<?php echo esc_attr($service_images[$index]); ?>"
-                                                            alt="<?php echo esc_attr(get_sub_field('title')); ?>">
+                                                        <img src="<?php echo esc_url($image['url']); ?>" alt="Logo">
                                                     </div>
                                                     <div class="our_services_content">
-                                                        <h4><?php echo esc_html(get_sub_field('title')); ?></h4>
+                                                        <h4><?php echo get_sub_field('title'); ?></h4>
                                                         <div class="para">
                                                             <p><?php echo esc_html(get_sub_field('content')); ?></p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <?php $index++; ?>
-                                            <?php if ($index >= count($service_images))
-                                                $index = 0; // Reset index if overflow ?>
+
                                         <?php endwhile; ?>
                                     <?php endif; ?>
                                 </div>
@@ -105,87 +101,56 @@
                         <!-- End Our Services -->
 
                         <!-- Our Work -->
+                    <?php elseif (get_row_layout() == 'how_our_ai_service_works'): ?>
                         <div class="our_work_wrapper position-relative">
                             <div class="container">
                                 <div class="common_title d-flex flex-column align-items-center justify-content-center">
                                     <div class="common_title_wrapper d-inline-flex align-items-center justify-content-center">
-                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/ai-title.png"
+                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/ai-title.png"
                                             alt="AI">
                                         <h2 class="m-0">How Our AI Service Works</h2>
                                     </div>
-                                    <div class="para text-center">
-                                        <p><?php the_field('hoasw_tagline') ?></p>
-                                    </div>
                                 </div>
+
                                 <div class="row">
-                                    <div class="col-lg-4 col-12">
-                                        <div class="work_box bg-secondary position-relative h-100">
-                                            <div class="work_img">
-                                                <?php
-                                                // Retrieve the image field
-                                                $image = get_sub_field('image'); // Replace 'header_image' with your field name
-                                    
-                                                // Check if the image field has a value
-                                                if ($image): ?>
-                                                    <img src="<?php echo esc_url($image['url']); ?>"
-                                                        alt="<?php echo esc_attr($image['alt']); ?>">
-                                                <?php endif; ?>
-                                            </div>
-                                            <div class="work_content d-flex align-items-center">
-                                                <div class="number rounded-pill d-flex align-items-center justify-content-center">1
-                                                </div>
-                                                <h4 class="m-0"><?php the_sub_field('content') ?></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-12">
-                                        <div class="work_box bg-secondary position-relative h-100">
-                                            <div class="work_img">
-                                                <?php
-                                                // Retrieve the image field
-                                                $image = get_field('hoasw_image_2'); // Replace 'header_image' with your field name
-                                    
-                                                // Check if the image field has a value
-                                                if ($image): ?>
-                                                    <img src="<?php echo esc_url($image['url']); ?>"
-                                                        alt="<?php echo esc_attr($image['alt']); ?>">
-                                                <?php endif; ?>
-                                            </div>
-                                            <div class="work_content d-flex align-items-center">
-                                                <div class="number rounded-pill d-flex align-items-center justify-content-center">2
-                                                </div>
-                                                <h4 class="m-0"><?php the_field('hoasw_image_2_description') ?></h4>
+                                    <?php if (have_rows('content')): // Check if the repeater field has rows ?>
+                                        <?php while (have_rows('content')):
+                                            the_row();
+                                            // Get sub-field values
+                                            $image = get_sub_field('image');
+                                            $content = get_sub_field('caption');
+                                            ?>
+                                            <div class="col-lg-4 col-12">
+                                                <div class="work_box bg-secondary position-relative h-100">
+                                                    <div class="work_img">
+                                                        <?php if ($image): ?>
+                                                            <img src="<?php echo esc_url($image['url']); ?>"
+                                                                alt="<?php echo esc_attr($image['alt']); ?>">
+                                                        <?php endif; ?>
+                                                    </div>
+                                                    <div class="work_content d-flex align-items-center">
+                                                        <div class="number rounded-pill d-flex align-items-center justify-content-center">
+                                                            <?php the_sub_field('sr_number') ?>
+                                                        </div>
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-12">
-                                        <div class="work_box bg-secondary position-relative h-100">
-                                            <div class="work_img">
-                                                <?php
-                                                // Retrieve the image field
-                                                $image = get_field('hoasw_image_3'); // Replace 'header_image' with your field name
-                                    
-                                                // Check if the image field has a value
-                                                if ($image): ?>
-                                                    <img src="<?php echo esc_url($image['url']); ?>"
-                                                        alt="<?php echo esc_attr($image['alt']); ?>">
-                                                <?php endif; ?>
-                                            </div>
-                                            <div class="work_content d-flex align-items-center">
-                                                <div class="number rounded-pill d-flex align-items-center justify-content-center">3
-                                                </div>
-                                                <h4 class="m-0"><?php the_field('hoasw_image_3_description') ?></h4>
 
+                                                        <h4 class="m-0"><?php echo esc_html($content); ?></h4>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                        <?php endwhile; ?>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
+
+
                         <!-- End Our Work -->
 
+
+
                         <!-- Tesimonials -->
+                    <?php elseif (get_row_layout() == 'testimonial'): ?>
                         <div class="testimonials position-relative">
                             <div class="container">
                                 <div
@@ -203,8 +168,8 @@
                                 </div>
                                 <div class="swiper testimonial_slider">
                                     <div class="swiper-wrapper">
-                                        <?php if (have_rows('testi')): ?>
-                                            <?php while (have_rows('testi')):
+                                        <?php if (have_rows('testimonial')): ?>
+                                            <?php while (have_rows('testimonial')):
                                                 the_row(); ?>
                                                 <div class="swiper-slide">
                                                     <div class="testimonial_slide_block flex-md-row flex-column d-flex 
@@ -218,10 +183,10 @@
                                                                         d="M15.5441 19.7961L10 16.3268L4.45589 19.7961C4.25449 19.9237 3.99468 19.9139 3.80074 19.7732C3.60734 19.633 3.51863 19.3892 3.57699 19.1575L5.16312 12.8123L0.209524 8.61234C0.0263987 8.45898 -0.0451248 8.20949 0.0287034 7.98234C0.102532 7.7546 0.307375 7.59496 0.545422 7.57835L7.01082 7.12687L9.45641 1.06093C9.63609 0.618037 10.3639 0.618037 10.5436 1.06093L12.9892 7.12687L19.4546 7.57835C19.6926 7.59496 19.8975 7.7546 19.9713 7.98234C20.0451 8.20949 19.9736 8.45898 19.7905 8.61234L14.8368 12.8123L16.423 19.1575C16.4813 19.3893 16.3927 19.6331 16.1992 19.7732C16.0013 19.917 15.7422 19.9202 15.5441 19.7961Z"
                                                                         fill="#FFB81C"></path>
                                                                 </svg>
-                                                                <span>5/5</span>
+                                                                <span><?php the_sub_field('star'); ?>/5</span>
                                                             </div>
                                                             <div class="content">
-                                                                <p><?php the_sub_field('test_para'); ?></p>
+                                                                <p><?php the_sub_field('review'); ?></p>
                                                             </div>
                                                             <div
                                                                 class="author_wrap d-flex align-items-center justify-content-between flex-sm-nowrap flex-wrap">
@@ -265,90 +230,86 @@
                         </div>
                     </div>
                     <!-- End Testimonial -->
+
+
+
                     <!-- Our Brands -->
+                <?php elseif (get_row_layout() == 'our_brands'): ?>
                     <div class="our_brands position-relative">
                         <div class="container">
                             <div
                                 class="our_brands_wrapper d-flex align-items-center justify-content-center flex-xl-nowrap flex-wrap">
-                                <div class="our_brands_box d-flex align-items-center justify-content-center">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/suzuki.png" alt="Suzuki">
-                                </div>
-                                <div class="our_brands_box d-flex align-items-center justify-content-center">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/swisse.png" alt="Swisse">
-                                </div>
-                                <div class="our_brands_box d-flex align-items-center justify-content-center">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/westpac.png"
-                                        alt="Westpac">
-                                </div>
-                                <div class="our_brands_box d-flex align-items-center justify-content-center">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/c-aus.png"
-                                        alt="Australian Government">
-                                </div>
-                                <div class="our_brands_box d-flex align-items-center justify-content-center">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/post.png"
-                                        alt="Australia Post">
-                                </div>
-                                <div class="our_brands_box d-flex align-items-center justify-content-center">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/the-y.png"
-                                        alt="The YMCA">
-                                </div>
+
+                                <?php if (have_rows('company_logo')): // Check if the repeater field has rows ?>
+                                    <?php while (have_rows('company_logo')):
+                                        the_row();
+                                        // Get sub-field values
+                                        $brand_image = get_sub_field('logo');
+                                        $alt_text = get_sub_field('alt_text'); // Optional alt text field
+                                        ?>
+
+                                        <div class="our_brands_box d-flex align-items-center justify-content-center">
+                                            <?php if ($brand_image): ?>
+                                                <img src="<?php echo esc_url($brand_image['url']); ?>" alt="<?php echo esc_attr($alt_text); ?>">
+                                            <?php endif; ?>
+                                        </div>
+
+                                    <?php endwhile; ?>
+                                <?php endif; ?>
+
                             </div>
                         </div>
                     </div>
-
-
                     <!-- End Our Brands -->
 
 
+
                     <!-- Our Team -->
+                <?php elseif (get_row_layout() == 'meet_our_team'): ?>
                     <div class="our_team position-relative">
                         <div class="container">
                             <div class="common_title d-flex flex-column align-items-center justify-content-center">
                                 <div class="common_title_wrapper d-inline-flex align-items-center justify-content-center">
-                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>./assets/images/ai-title.png" alt="AI">
+                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/ai-title.png" alt="AI">
                                     <h2 class="m-0">Meet Our Team</h2>
                                 </div>
                                 <div class="para text-center">
-                                    <p>Our team possesses deep expertise in AI and digital marketing, leveraging years of
-                                        experience to craft optimised, data-driven strategies.</p>
+                                    <!-- <p>Hello</p> -->
+                                    <!-- <p><?php //the_field('tagline'); ?></p> -->
                                 </div>
                             </div>
                             <div class="row justify-content-center">
-                                <!--  -->
-                                <?php
-                                if (have_rows('content')):
-                                    while (have_rows('content')):
-                                        the_row();
-                                        if (get_row_layout() == 'meet_our_members'):
-                                            // Get the image field (assuming it is an image field type)
-                                            $team_image = get_sub_field('team_image');
-                                            $team_name = get_sub_field('team_name');
-                                            ?>
-                                            <div class="col-xl-3 col-md-5 col-12">
-                                                <div class="our_team_box mx-auto">
-                                                    <div class="team_member_img">
-                                                        <?php if ($team_image):
-                                                            // Output HTML for the image
-                                                            echo '<img src="' . esc_url($team_image['url']) . '" alt="' . esc_attr($team_image['alt']) . '" />';
-                                                        endif; ?>
-                                                    </div>
-                                                    <div class="team_member_info">
-                                                        <p><?php echo '<p>' . get_sub_field('designation') . '</p>'; ?></p>
-                                                        <h4 class="m-0"> <?php echo '<p>' . esc_html($team_name) . '</p>'; ?></h4>
-                                                    </div>
+                                <!-- Team Members Loop -->
+                                <?php if (have_rows('team_content')): ?>
+                                    <?php while (have_rows('team_content')):
+                                        the_row(); ?>
+                                        <?php
+                                        $team_image = get_sub_field('image');
+                                        $team_name = get_sub_field('name');
+                                        $team_designation = get_sub_field('designation');
+                                        ?>
+                                        <div class="col-xl-3 col-md-5 col-12">
+                                            <div class="our_team_box mx-auto">
+                                                <div class="team_member_img">
+                                                    <?php if ($team_image): ?>
+                                                        <img src="<?php echo esc_url($team_image['url']); ?>"
+                                                            alt="<?php echo esc_attr($team_image['alt']); ?>" />
+                                                    <?php endif; ?>
+                                                </div>
+                                                <div class="team_member_info">
+                                                    <p><?php echo esc_html($team_designation); ?></p>
+                                                    <h4 class="m-0"><?php echo esc_html($team_name); ?></h4>
                                                 </div>
                                             </div>
-                                            <?php
-                                        endif;
-                                    endwhile;
-                                endif;
-                                ?>
-                                <!--  -->
-
+                                        </div>
+                                    <?php endwhile; ?>
+                                <?php endif; ?>
+                                <!-- End Team Members Loop -->
                             </div>
                         </div>
                     </div>
                     <!-- End Our Team -->
+
 
 
                     <!-- FAQs Wrapper -->
