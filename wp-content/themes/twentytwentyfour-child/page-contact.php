@@ -1,6 +1,12 @@
 <?php
 /* Template Name: Contact*/
+
+
+
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">

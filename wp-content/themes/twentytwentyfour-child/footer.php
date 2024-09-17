@@ -7,7 +7,22 @@
 
                 <div class="col-lg-3 col-md-6 col-12">
                     <div class="footer_contacts">
-                        <h6 class="h4">Say Hello</h6>
+                        <h6 class="h4">
+                            <main id="main" class="site-main" role="main">
+                                <?php
+                                while (have_posts()):
+                                    the_post();
+                                    the_content();
+                                endwhile;
+                                ?>
+
+                                <?php if (is_active_sidebar('custom-widget-area')): ?>
+                                    <div id="secondary" class="widget-area">
+                                        <?php dynamic_sidebar('custom-widget-area'); ?>
+                                    </div>
+                                <?php endif; ?>
+                            </main>
+                        </h6>
                         <ul class="list-none">
                             <li>337-339 Moray St, <br>
                                 South Melbourne 3205 Victoria</li>
@@ -19,14 +34,17 @@
 
                 <div class="col-lg-3 col-md-6 col-12 d-flex justify-content-lg-center">
                     <div class="footer_links d-inline-block">
-                        <h6 class="h4">Quick Link</h6>
-
-                        <ul class="list-none">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Our Clients</a></li>
-                            <li><a href="#">Our Team</a></li>
-                        </ul>
+                        <h6 class="h4">Quick Links</h6>
+                        <?php
+                        wp_nav_menu(
+                            array(
+                                'theme_location' => 'footer-menu', // Location registered in functions.php
+                                'container' => 'ul',
+                                'menu_class' => 'list-none',
+                                'fallback_cb' => false,
+                            )
+                        );
+                        ?>
                     </div>
                 </div>
 

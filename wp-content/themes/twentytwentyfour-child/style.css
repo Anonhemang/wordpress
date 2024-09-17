@@ -15422,7 +15422,7 @@ h6,
 /* !!!!            TESTIMONIALS             !!!! */
 /* ============================================= */
 .testimonials {
-  padding: 62px 0 102px;
+  padding: 62px 0 0;
 }
 
 .testimonials .common_title {
@@ -15482,14 +15482,14 @@ swiper-slide {
   height: auto;
 }
 
-.testimonial_slider {
+/* .testimonial_slider {
   padding-bottom: 35px;
-}
+} */
 
 .testimonial_slide_block {
   background: rgba(255, 255, 255, 0.01);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  height: 100%;
+
   box-sizing: border-box;
 }
 
